@@ -6,7 +6,7 @@
 
 // vec3 Class - Represents a 3D vector or point in space
 
-clas vec3 {
+class vec3 {
 public:
     double e[3]; // Components of the vector: e[0] = x, e[1] = y, e[2] = z
 
@@ -83,21 +83,21 @@ inline vec3 operator+(const vec3& u, const vec3& v) {
 inline vec3 operator-(const vec3& u, const vec3& v) {
     vec3 results = u;
     vec3 neg_v = -v;
-    result += neg_v;
-    return result; 
+    results += neg_v;
+    return results; 
 }
 
 // Component-wise multiplication (not dot product!)
-inline vec3 operator*(const vec3& u, cosnt vec3& v) {
+inline vec3 operator*(const vec3& u, const vec3& v) {
     return vec3(
         u.e[0] * v.e[0],
         u.e[1] * v.e[1],
-        u.e[2] * v.e[2];
-    )
+        u.e[2] * v.e[2]
+    );
 }
 
 // Scalar Multiplication (scalar on the left)
-inline vec3 operator*(double t, vec3& v) {
+inline vec3 operator*(double t, const vec3& v) {
     return vec3(t * v.e[0], t * v.e[1], t * v.e[2]);
 }
 
